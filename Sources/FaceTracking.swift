@@ -18,10 +18,6 @@ public final class FaceTracking: NSObject {
 
     public weak var delegate: FaceTrackingDelegate?
 
-    deinit {
-        UIApplication.shared.isIdleTimerDisabled = false
-    }
-
     public var isSupported: Bool {
         return ARFaceTrackingConfiguration.isSupported
     }
@@ -32,13 +28,12 @@ public final class FaceTracking: NSObject {
     }
 
     public func start() {
-        UIApplication.shared.isIdleTimerDisabled = true
         let configuration = ARFaceTrackingConfiguration()
+        session.delegate = self
         session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
 
     public func stop() {
-        UIApplication.shared.isIdleTimerDisabled = false
         session.pause()
     }
 }
@@ -53,19 +48,19 @@ extension FaceTracking: ARSessionDelegate {
 
         if let eyeBlinkRightCloseness = faceAnchor.blendShapes[.eyeBlinkRight]?.doubleValue {
             let e = 0.045
-            let eyeBlinkRightClosenessX8 = eyeBlinkRightCloseness * 8
+            let eyeBlinkRightClosenessX8 = eyeBlinkRightCloseness * 2
             trackingData.rightEye = eyeBlinkRightClosenessX8 < e ? 0 : eyeBlinkRightClosenessX8 > 1 - e ? 1 : eyeBlinkRightClosenessX8
         }
 
         if let eyeBlinkLeftCloseness = faceAnchor.blendShapes[.eyeBlinkLeft]?.doubleValue {
             let e = 0.045
-            let eyeBlinkLeftClosenessX8 = eyeBlinkLeftCloseness * 8
+            let eyeBlinkLeftClosenessX8 = eyeBlinkLeftCloseness * 2
             trackingData.leftEye = eyeBlinkLeftClosenessX8 < e ? 0 : eyeBlinkLeftClosenessX8 > 1 - e ? 1 : eyeBlinkLeftClosenessX8
         }
 
         if let mouthCloseness = faceAnchor.blendShapes[.mouthClose]?.doubleValue {
             let e = 0.045
-            let mouthClosenessX8 = mouthCloseness * 8
+            let mouthClosenessX8 = mouthCloseness * 4
             trackingData.mouthCloseness = mouthClosenessX8 < e ? 0 : mouthClosenessX8 > 1 - e ? 1 : mouthClosenessX8
         }
 

@@ -36,18 +36,12 @@ open class AvatarView: SCNView {
     }
 
     public func loadModel(withName name: String) throws {
-        faceTracking.stop()
-
         let loader = try VRMSceneLoader(named: name)
         avatar = try loader.loadScene().vrmNode
         setUp(node: avatar)
 
-        avatar.setBlendShape(value: 1.0, for: .custom("><"))
-        avatar.humanoid.node(for: .neck)?.eulerAngles = SCNVector3(0, 0, 20 * CGFloat.pi / 180)
         avatar.humanoid.node(for: .leftShoulder)?.eulerAngles = SCNVector3(0, 0, 40 * CGFloat.pi / 180)
-        avatar.humanoid.node(for: .rightShoulder)?.eulerAngles = SCNVector3(0, 0, 40 * CGFloat.pi / 180)
-
-        faceTracking.start()
+        avatar.humanoid.node(for: .rightShoulder)?.eulerAngles = SCNVector3(0, 0, -40 * CGFloat.pi / 180)
     }
 
     private func setUp(node: VRMNode) {
@@ -56,37 +50,34 @@ open class AvatarView: SCNView {
         scene.rootNode.addChildNode(node)
         self.scene = scene
 
-        let enviromentLight = SCNLight()
-        enviromentLightNode.light = enviromentLight
-        enviromentLight.type = .ambient
-        enviromentLight.color = UIColor.white
-        scene.rootNode.addChildNode(enviromentLightNode)
-
-        let pointLight = SCNLight()
-        avatarPointLightNode.light = pointLight
-        pointLight.type = .spot
-        pointLight.color = UIColor.white
-        enviromentLight.intensity = 1000
-        enviromentLightNode.position = SCNVector3(x: 0, y: 0, z: -2)
-        scene.rootNode.addChildNode(avatarPointLightNode)
-
         let cameraNode = SCNNode()
+        cameraNode.name = "camera"
         cameraNode.camera = SCNCamera()
         scene.rootNode.addChildNode(cameraNode)
 
         cameraNode.position = SCNVector3(0, 0.8, -1.6)
         cameraNode.rotation = SCNVector4(0, 1, 0, Float.pi)
     }
+
+    public func startFaceTracking() {
+        faceTracking.start()
+    }
+
+    public func stopFaceTracking() {
+        faceTracking.stop()
+    }
 }
 
 extension AvatarView: FaceTrackingDelegate {
     public func faceTracking(_ faceTracking: FaceTracking, didUpdate trackingData: TrackingData) {
-        avatar.setBlendShape(value: CGFloat(trackingData.leftEye), for: .preset(.blinkL))
-        avatar.setBlendShape(value: CGFloat(trackingData.rightEye), for: .preset(.blinkR))
-        avatar.setBlendShape(value: CGFloat(trackingData.mouthCloseness), for: .preset(.a))
+        DispatchQueue.main.async {
+            self.avatar.setBlendShape(value: CGFloat(trackingData.leftEye), for: .preset(.blinkL))
+            self.avatar.setBlendShape(value: CGFloat(trackingData.rightEye), for: .preset(.blinkR))
+            self.avatar.setBlendShape(value: CGFloat(trackingData.mouthCloseness), for: .preset(.a))
 
-        let humanoid = avatar.humanoid
-        humanoid.node(for: .neck)?.simdOrientation = trackingData.neckQuaternion
+            let humanoid = self.avatar.humanoid
+            humanoid.node(for: .neck)?.simdOrientation = trackingData.neckQuaternion.inverse
+        }
     }
 
     public func didFinishFaceTracking(_ faceTracking: FaceTracking) {

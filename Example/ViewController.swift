@@ -11,11 +11,11 @@ import SceneKit
 import VTuberKit
 
 class ViewController: UIViewController {
+    @IBOutlet private weak var avatarView: AvatarView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let avatarView = AvatarView(frame: view.bounds)
         avatarView.autoenablesDefaultLighting = true
         avatarView.allowsCameraControl = true
         avatarView.showsStatistics = true
@@ -27,6 +27,21 @@ class ViewController: UIViewController {
         } catch {
             print(error)
         }
+
+        let camera = avatarView.scene!.rootNode.childNode(withName: "camera", recursively: true)
+        camera?.camera?.fieldOfView = 18
+        camera?.position.y = 0.8
+        camera?.eulerAngles.x += 20 * Float.pi / 180
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        avatarView.startFaceTracking()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        avatarView.stopFaceTracking()
     }
 }
 
