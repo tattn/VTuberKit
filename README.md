@@ -21,8 +21,11 @@
 ## Features
 
 - [x] Show VRM avatar
+- [x] Facial morphing (blend shape)
+- [x] Bone animation (skin / joint)
 - [x] Face tracking
 
+VTuber is a trending avatar style in Japan :wink:
 For "VRM", please refer to [this page](https://dwango.github.io/en/vrm/).
 
 # Requirements
@@ -64,10 +67,13 @@ avatarView.startFaceTracking()
 avatarView.stopFaceTracking()
 ```
 
+More details: [Example](https://github.com/tattn/VTuberKit/blob/master/Example/ViewController.swift)
+
 
 # ToDo
 - [ ] Improve face tracking
 - [ ] Face tracking for All iOS devices without TrueDepth API
+- [ ] Add pose presets
 - [ ] Add many utility functions
 
 # Contributing
@@ -90,7 +96,7 @@ VTuberKit is released under the MIT license. See LICENSE for details.
 
 # Dependencies
 
-VTuberKit is depended on [VRMKit](https://github.com/tattn/VRMKit). Please also see it.
+VTuberKit is depended on [tattn/VRMKit](https://github.com/tattn/VRMKit). Please also see it.
 
 # Author
 Tatsuya Tanaka
