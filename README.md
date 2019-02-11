@@ -85,7 +85,10 @@ avatarView.startFaceTracking()
 avatarView.stopFaceTracking()
 ```
 
-More details: [Example](https://github.com/tattn/VTuberKit/blob/master/Example/ViewController.swift)
+### More details
+- Facial morphing and bone animation
+  - [tattn/VRMKit](https://github.com/tattn/VRMKit)
+- [Example](https://github.com/tattn/VTuberKit/blob/master/Example/ViewController.swift)
 
 
 # ToDo
