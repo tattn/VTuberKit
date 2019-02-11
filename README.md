@@ -3,8 +3,17 @@
 <h5 align="center">Avatar support library</h5>
 
 <div align="center">
+  <a href="https://app.bitrise.io/app/9e47038547c7be2f">
+    <img src="https://app.bitrise.io/app/9e47038547c7be2f/status.svg?token=qyal1kspHJXpa6Jbk5JyYA" alt="Bitrise" />
+  </a>
   <a href="https://github.com/Carthage/Carthage">
     <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible" />
+  </a>
+  <a href="http://cocoapods.org/pods/VTuberKit">
+    <img src="https://img.shields.io/cocoapods/v/VTuberKit.svg" alt="CocoaPods" />
+  </a>
+  <a href="http://cocoapods.org/pods/VTuberKit">
+    <img src="https://img.shields.io/cocoapods/p/VTuberKit.svg" alt="Platform" />
   </a>
   <a href="https://developer.apple.com/swift">
     <img src="https://img.shields.io/badge/Swift-4-F16D39.svg" alt="Swift Version" />
@@ -47,7 +56,9 @@ Add `VTuberKit.framework`, `VRMKit.framework` and `VRMSceneKit.framework` into `
 
 ## CocoaPods
 
-TODO
+```ruby
+pod 'VTuberKit'
+```
 
 # Dependencies
 
