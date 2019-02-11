@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         avatarView.allowsCameraControl = true
         avatarView.showsStatistics = true
         avatarView.backgroundColor = UIColor.black
-        view.addSubview(avatarView)
 
         do {
             try avatarView.loadModel(withName: "AliciaSolid.vrm")
