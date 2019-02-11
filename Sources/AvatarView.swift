@@ -10,9 +10,11 @@ import SceneKit
 import VRMSceneKit
 
 open class AvatarView: SCNView {
-    open var enviromentLightNode = SCNNode()
-    open var avatarPointLightNode = SCNNode()
+    open var cameraNode = SCNNode()
     public var avatar: VRMNode!
+
+    open var isBlinkTrackingEnabled = true
+    open var isMouthTrackingEnabled = true
 
     let faceTracking = FaceTracking()
 
@@ -39,9 +41,6 @@ open class AvatarView: SCNView {
         let loader = try VRMSceneLoader(named: name)
         avatar = try loader.loadScene().vrmNode
         setUp(node: avatar)
-
-        avatar.humanoid.node(for: .leftShoulder)?.eulerAngles = SCNVector3(0, 0, 40 * CGFloat.pi / 180)
-        avatar.humanoid.node(for: .rightShoulder)?.eulerAngles = SCNVector3(0, 0, -40 * CGFloat.pi / 180)
     }
 
     private func setUp(node: VRMNode) {
@@ -50,7 +49,6 @@ open class AvatarView: SCNView {
         scene.rootNode.addChildNode(node)
         self.scene = scene
 
-        let cameraNode = SCNNode()
         cameraNode.name = "camera"
         cameraNode.camera = SCNCamera()
         scene.rootNode.addChildNode(cameraNode)
@@ -71,9 +69,18 @@ open class AvatarView: SCNView {
 extension AvatarView: FaceTrackingDelegate {
     public func faceTracking(_ faceTracking: FaceTracking, didUpdate trackingData: TrackingData) {
         DispatchQueue.main.async {
-            self.avatar.setBlendShape(value: CGFloat(trackingData.leftEye), for: .preset(.blinkL))
-            self.avatar.setBlendShape(value: CGFloat(trackingData.rightEye), for: .preset(.blinkR))
-            self.avatar.setBlendShape(value: CGFloat(trackingData.mouthCloseness), for: .preset(.a))
+            if self.isBlinkTrackingEnabled {
+                self.avatar.setBlendShape(value: CGFloat(trackingData.leftEye), for: .preset(.blinkL))
+                self.avatar.setBlendShape(value: CGFloat(trackingData.rightEye), for: .preset(.blinkR))
+            } else {
+                self.avatar.setBlendShape(value: 0, for: .preset(.blinkL))
+                self.avatar.setBlendShape(value: 0, for: .preset(.blinkR))
+            }
+            if self.isMouthTrackingEnabled {
+                self.avatar.setBlendShape(value: CGFloat(trackingData.mouth), for: .preset(.a))
+            } else {
+                self.avatar.setBlendShape(value: 0, for: .preset(.a))
+            }
 
             let humanoid = self.avatar.humanoid
             humanoid.node(for: .neck)?.simdOrientation = trackingData.neckQuaternion.inverse
@@ -83,6 +90,4 @@ extension AvatarView: FaceTrackingDelegate {
     public func didFinishFaceTracking(_ faceTracking: FaceTracking) {
         faceTracking.start() // TODO/FIXME:
     }
-
-
 }

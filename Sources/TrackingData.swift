@@ -12,13 +12,13 @@ import simd
 public struct TrackingData {
     var leftEye: Double
     var rightEye: Double
-    var mouthCloseness: Double
+    var mouth: Double
     var neckQuaternion: simd_quatf
     var modelPosition: simd_float3
 }
 
 extension TrackingData {
     init() {
-        self.init(leftEye: 0, rightEye: 0, mouthCloseness: 0, neckQuaternion: simd_quatf(), modelPosition: simd_float3())
+        self.init(leftEye: 0, rightEye: 0, mouth: 0, neckQuaternion: simd_quatf(), modelPosition: simd_float3())
     }
 }

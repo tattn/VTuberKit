@@ -22,12 +22,8 @@ public final class FaceTracking: NSObject {
         return ARFaceTrackingConfiguration.isSupported
     }
 
-    public override init() {
-        super.init()
-        guard isSupported else { return }
-    }
-
     public func start() {
+        guard isSupported else { return }
         let configuration = ARFaceTrackingConfiguration()
         session.delegate = self
         session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
@@ -61,15 +57,11 @@ extension FaceTracking: ARSessionDelegate {
         if let mouthCloseness = faceAnchor.blendShapes[.mouthClose]?.doubleValue {
             let e = 0.045
             let mouthClosenessX8 = mouthCloseness * 4
-            trackingData.mouthCloseness = mouthClosenessX8 < e ? 0 : mouthClosenessX8 > 1 - e ? 1 : mouthClosenessX8
+            trackingData.mouth = mouthClosenessX8 < e ? 0 : mouthClosenessX8 > 1 - e ? 1 : mouthClosenessX8
         }
 
         let transform = faceAnchor.transform
-        let z = transform.columns.3.z * 50 + 30
         trackingData.neckQuaternion = simd_quaternion(transform)
-        trackingData.modelPosition = simd_float3.init(transform.columns.3.x * 5,
-                                                      transform.columns.3.y * 5 - z / 2.5,
-                                                      z)
 
         delegate?.faceTracking(self, didUpdate: trackingData)
     }

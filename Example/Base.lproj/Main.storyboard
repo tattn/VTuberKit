@@ -21,13 +21,30 @@
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQ6-Vt-WuU" customClass="AvatarView" customModule="VTuberKit">
                                 <rect key="frame" x="0.0" y="64" width="375" height="333.5"/>
                             </sceneKitView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jwm-5o-5wA">
+                                <rect key="frame" x="8" y="415.5" width="359" height="29"/>
+                                <segments>
+                                    <segment title="Neutral"/>
+                                    <segment title="Joy"/>
+                                    <segment title="Fun"/>
+                                    <segment title="Sorrow"/>
+                                    <segment title="Angry"/>
+                                    <segment title="&gt;&lt;"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didFaceChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="klV-tv-I2R"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="jwm-5o-5wA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="8jB-VW-Beo"/>
                             <constraint firstItem="GQ6-Vt-WuU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DNt-dF-pcT"/>
                             <constraint firstItem="GQ6-Vt-WuU" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="Dhn-M1-qHA"/>
                             <constraint firstItem="GQ6-Vt-WuU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="S69-Ao-svp"/>
+                            <constraint firstItem="jwm-5o-5wA" firstAttribute="top" secondItem="GQ6-Vt-WuU" secondAttribute="bottom" constant="18" id="Z3a-pc-TEf"/>
                             <constraint firstItem="GQ6-Vt-WuU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dvK-Tj-xOt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jwm-5o-5wA" secondAttribute="trailing" constant="8" id="obz-Jv-GjO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

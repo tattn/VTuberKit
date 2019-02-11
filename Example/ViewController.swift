@@ -28,6 +28,14 @@ class ViewController: UIViewController {
             print(error)
         }
 
+        setUpScene()
+    }
+
+    private func setUpScene() {
+        let avatar = avatarView.avatar!
+        avatar.humanoid.node(for: .leftShoulder)?.eulerAngles = SCNVector3(0, 0, 40 * CGFloat.pi / 180)
+        avatar.humanoid.node(for: .rightShoulder)?.eulerAngles = SCNVector3(0, 0, -40 * CGFloat.pi / 180)
+
         let camera = avatarView.scene!.rootNode.childNode(withName: "camera", recursively: true)
         camera?.camera?.fieldOfView = 18
         camera?.position.y = 0.8
@@ -42,6 +50,33 @@ class ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         avatarView.stopFaceTracking()
+    }
+
+    @IBAction private func didFaceChanged(_ sender: UISegmentedControl) {
+        let avatar = avatarView.avatar!
+        avatar.setBlendShape(value: 0, for: .preset(.joy))
+        avatar.setBlendShape(value: 0, for: .preset(.fun))
+        avatar.setBlendShape(value: 0, for: .preset(.sorrow))
+        avatar.setBlendShape(value: 0, for: .preset(.angry))
+        avatar.setBlendShape(value: 0, for: .custom("><"))
+
+        let index = sender.selectedSegmentIndex
+        avatarView.isBlinkTrackingEnabled = index == 0
+        avatarView.isMouthTrackingEnabled = index != 1 && index != 4
+
+        switch index {
+        case 1:
+            avatar.setBlendShape(value: 1.0, for: .preset(.joy))
+        case 2:
+            avatar.setBlendShape(value: 1.0, for: .preset(.fun))
+        case 3:
+            avatar.setBlendShape(value: 1.0, for: .preset(.sorrow))
+        case 4:
+            avatar.setBlendShape(value: 1.0, for: .preset(.angry))
+        case 5:
+            avatar.setBlendShape(value: 1.0, for: .custom("><"))
+        default: ()
+        }
     }
 }
 
