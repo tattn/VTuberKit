@@ -16,7 +16,7 @@
 
 <br />
 
-<img src="https://github.com/tattn/VTuberKit/raw/master/docs/demo.gif" width="300px" alt="demo" />
+<img src="https://github.com/tattn/VTuberKit/raw/master/docs/demo.gif" width="400px" alt="demo" />
 
 ## Features
 
@@ -26,6 +26,7 @@
 - [x] Face tracking
 
 VTuber is a trending avatar style in Japan :wink:
+
 For "VRM", please refer to [this page](https://dwango.github.io/en/vrm/).
 
 # Requirements
@@ -42,9 +43,15 @@ For "VRM", please refer to [this page](https://dwango.github.io/en/vrm/).
 github "tattn/VTuberKit"
 ```
 
+Add `VTuberKit.framework`, `VRMKit.framework` and `VRMSceneKit.framework` into `Linked frameworks and Libraries`.
+
 ## CocoaPods
 
 TODO
+
+# Dependencies
+
+VTuberKit is depended on [tattn/VRMKit](https://github.com/tattn/VRMKit). Please also see it.
 
 # Usage
 
@@ -93,10 +100,6 @@ Donating to help me continue working on this project.
 # License
 
 VTuberKit is released under the MIT license. See LICENSE for details.
-
-# Dependencies
-
-VTuberKit is depended on [tattn/VRMKit](https://github.com/tattn/VRMKit). Please also see it.
 
 # Author
 Tatsuya Tanaka
