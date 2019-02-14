@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'VTuberKit'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'Avatar support library like a AvatarKit'
 
   s.description      = <<-DESC
@@ -23,6 +23,6 @@ Show 3D models and track face
   s.frameworks = 'Foundation'
   s.frameworks = 'SceneKit'
 
-  s.dependency 'VRMKit', "~> 0.2.3"
-  s.dependency 'VRMSceneKit', "~> 0.2.3"
+  s.dependency 'VRMKit', "~> 0.2.4"
+  s.dependency 'VRMSceneKit', "~> 0.2.4"
 end
