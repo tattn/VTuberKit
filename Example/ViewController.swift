@@ -31,14 +31,14 @@ class ViewController: UIViewController {
     }
 
     private func setUpScene() {
-        let avatar = avatarView.avatar!
-        avatar.humanoid.node(for: .leftShoulder)?.eulerAngles = SCNVector3(0, 0, 40 * CGFloat.pi / 180)
-        avatar.humanoid.node(for: .rightShoulder)?.eulerAngles = SCNVector3(0, 0, -40 * CGFloat.pi / 180)
+        let avatar = avatarView.avatar
+        avatar.humanoid.node(for: .leftShoulder)?.eulerAngles = SCNVector3(0, 0, 20.0 * .pi / 180)
+        avatar.humanoid.node(for: .rightShoulder)?.eulerAngles = SCNVector3(0, 0, -20.0 * .pi / 180)
 
-        let camera = avatarView.scene!.rootNode.childNode(withName: "camera", recursively: true)
-        camera?.camera?.fieldOfView = 18
-        camera?.position.y = 0.8
-        camera?.eulerAngles.x += 20 * Float.pi / 180
+        let camera = avatarView.cameraNode
+        camera.camera?.fieldOfView = 18
+        camera.position.y = 0.8
+        camera.eulerAngles.x += 20 * Float.pi / 180
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func didFaceChanged(_ sender: UISegmentedControl) {
-        let avatar = avatarView.avatar!
+        let avatar = avatarView.avatar
         avatar.setBlendShape(value: 0, for: .preset(.joy))
         avatar.setBlendShape(value: 0, for: .preset(.fun))
         avatar.setBlendShape(value: 0, for: .preset(.sorrow))

@@ -7,11 +7,12 @@
 //
 
 import SceneKit
+import VRMKit
 import VRMSceneKit
 
 open class AvatarView: SCNView {
     open var cameraNode = SCNNode()
-    public var avatar: VRMNode!
+    public lazy var avatar: VRMNode = { fatalError() }()
 
     open var isBlinkTrackingEnabled = true
     open var isMouthTrackingEnabled = true
@@ -39,6 +40,24 @@ open class AvatarView: SCNView {
 
     public func loadModel(withName name: String) throws {
         let loader = try VRMSceneLoader(named: name)
+        avatar = try loader.loadScene().vrmNode
+        setUp(node: avatar)
+    }
+
+    public func loadModel(withURL url: URL) throws {
+        let loader = try VRMSceneLoader(withURL: url)
+        avatar = try loader.loadScene().vrmNode
+        setUp(node: avatar)
+    }
+
+    public func loadModel(withData data: Data) throws {
+        let loader = try VRMSceneLoader(withData: data)
+        avatar = try loader.loadScene().vrmNode
+        setUp(node: avatar)
+    }
+
+    public func loadModel(withVRM vrm: VRM) throws {
+        let loader = VRMSceneLoader(vrm: vrm)
         avatar = try loader.loadScene().vrmNode
         setUp(node: avatar)
     }
@@ -88,6 +107,6 @@ extension AvatarView: FaceTrackingDelegate {
     }
 
     public func didFinishFaceTracking(_ faceTracking: FaceTracking) {
-        faceTracking.start() // TODO/FIXME:
+        // TODO/FIXME:
     }
 }

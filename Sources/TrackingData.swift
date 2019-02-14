@@ -10,11 +10,11 @@ import Foundation
 import simd
 
 public struct TrackingData {
-    var leftEye: Double
-    var rightEye: Double
-    var mouth: Double
-    var neckQuaternion: simd_quatf
-    var modelPosition: simd_float3
+    public var leftEye: Double
+    public var rightEye: Double
+    public var mouth: Double
+    public var neckQuaternion: simd_quatf
+    public var modelPosition: simd_float3
 }
 
 extension TrackingData {
