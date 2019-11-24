@@ -7,12 +7,13 @@ let package = Package(
     products: [
         .library(name: "VTuberKit", targets: ["VTuberKit"])
     ],
+    dependencies: [
+        .package(url: "git@github.com:tattn/VRMKit.git", from: "0.2.4")
+    ],
     targets: [
         .target(
             name: "VTuberKit",
-            dependencies: [
-                .package(url: "git@github.com:tattn/VRMKit.git", from: "0.2.5")
-            ],
+            dependencies: ["VRMKit", "VRMSceneKit"],
             path: "Sources"
         )
     ]
