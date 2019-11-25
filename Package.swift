@@ -8,7 +8,7 @@ let package = Package(
         .library(name: "VTuberKit", targets: ["VTuberKit"])
     ],
     dependencies: [
-        .package(url: "git@github.com:tattn/VRMKit.git", from: "0.2.4")
+        .package(url: "git@github.com:tattn/VRMKit.git", from: "0.3.1")
     ],
     targets: [
         .target(

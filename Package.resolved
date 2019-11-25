@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "VRMKit",
+        "repositoryURL": "git@github.com:tattn/VRMKit.git",
+        "state": {
+          "branch": null,
+          "revision": "0198707831c84ff1904f9e501fa6ca36b43920b8",
+          "version": "0.3.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
