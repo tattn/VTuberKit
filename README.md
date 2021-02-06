@@ -46,13 +46,21 @@ For "VRM", please refer to [this page](https://dwango.github.io/en/vrm/).
 
 # Installation
 
-## Carthage (Recommended)
+## Swift Package Manager (Recommended)
+
+You can install this package with Swift Package Manager.
+
+## Carthage
 
 ```ruby
 github "tattn/VTuberKit"
 ```
 
-Add `VTuberKit.framework`, `VRMKit.framework` and `VRMSceneKit.framework` into `Linked frameworks and Libraries`.
+```ruby
+$ carthage update --platform ios --use-xcframeworks
+```
+
+Add `VTuberKit.xcframework`, `VRMKit.xcframework` and `VRMSceneKit.xcframework` into `Linked frameworks and Libraries & Embed Frameworks`.
 
 ## CocoaPods
 

@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06218E1C25CE50D800EEFA5E /* VRMKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06218E1A25CE50D800EEFA5E /* VRMKit.xcframework */; };
+		06218E1D25CE50D800EEFA5E /* VRMKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06218E1A25CE50D800EEFA5E /* VRMKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06218E1E25CE50D800EEFA5E /* VRMSceneKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06218E1B25CE50D800EEFA5E /* VRMSceneKit.xcframework */; };
+		06218E1F25CE50D800EEFA5E /* VRMSceneKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06218E1B25CE50D800EEFA5E /* VRMSceneKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06218E2C25CE51B100EEFA5E /* VRMKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06218E1A25CE50D800EEFA5E /* VRMKit.xcframework */; };
+		06218E2D25CE51B100EEFA5E /* VRMKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06218E1A25CE50D800EEFA5E /* VRMKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06218E2E25CE51B100EEFA5E /* VRMSceneKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06218E1B25CE50D800EEFA5E /* VRMSceneKit.xcframework */; };
+		06218E2F25CE51B100EEFA5E /* VRMSceneKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06218E1B25CE50D800EEFA5E /* VRMSceneKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		247DCF02221083A700E4C87F /* VTuberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247DCEF8221083A700E4C87F /* VTuberKit.framework */; };
 		247DCF07221083A700E4C87F /* VTuberKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247DCF06221083A700E4C87F /* VTuberKitTests.swift */; };
 		247DCF09221083A700E4C87F /* VTuberKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 247DCEFB221083A700E4C87F /* VTuberKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -15,15 +23,11 @@
 		247DCF1E2210840300E4C87F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247DCF1C2210840300E4C87F /* Main.storyboard */; };
 		247DCF202210840600E4C87F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247DCF1F2210840600E4C87F /* Assets.xcassets */; };
 		247DCF232210840600E4C87F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247DCF212210840600E4C87F /* LaunchScreen.storyboard */; };
-		247DCF3F22115AAD00E4C87F /* VRMSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247DCF3D22115AAD00E4C87F /* VRMSceneKit.framework */; };
-		247DCF4022115AAD00E4C87F /* VRMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247DCF3E22115AAD00E4C87F /* VRMKit.framework */; };
 		247DCF4122115AC900E4C87F /* VTuberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247DCEF8221083A700E4C87F /* VTuberKit.framework */; };
 		247DCF4222115AC900E4C87F /* VTuberKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 247DCEF8221083A700E4C87F /* VTuberKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		247DCF4822115B5400E4C87F /* AliciaSolid.vrm in Resources */ = {isa = PBXBuildFile; fileRef = 247DCF4722115B5400E4C87F /* AliciaSolid.vrm */; };
 		247DCF4922115B5400E4C87F /* AliciaSolid.vrm in Resources */ = {isa = PBXBuildFile; fileRef = 247DCF4722115B5400E4C87F /* AliciaSolid.vrm */; };
 		247DCF4B22115CAB00E4C87F /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247DCF4A22115CAB00E4C87F /* AvatarView.swift */; };
-		247DCF4C22115D1200E4C87F /* VRMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247DCF3E22115AAD00E4C87F /* VRMKit.framework */; };
-		247DCF4D22115D1200E4C87F /* VRMSceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247DCF3D22115AAD00E4C87F /* VRMSceneKit.framework */; };
 		247DCF5322116B0700E4C87F /* FaceTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247DCF5222116B0700E4C87F /* FaceTracking.swift */; };
 		247DCF5522116EE800E4C87F /* TrackingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247DCF5422116EE800E4C87F /* TrackingData.swift */; };
 		247DCF762211B62D00E4C87F /* VRMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247DCF3E22115AAD00E4C87F /* VRMKit.framework */; };
@@ -55,12 +59,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		06218E2025CE50D800EEFA5E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				06218E1D25CE50D800EEFA5E /* VRMKit.xcframework in Embed Frameworks */,
+				06218E1F25CE50D800EEFA5E /* VRMSceneKit.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		247DCF4522115AC900E4C87F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				06218E2D25CE51B100EEFA5E /* VRMKit.xcframework in Embed Frameworks */,
+				06218E2F25CE51B100EEFA5E /* VRMSceneKit.xcframework in Embed Frameworks */,
 				247DCF4222115AC900E4C87F /* VTuberKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -69,6 +87,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06218E1A25CE50D800EEFA5E /* VRMKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VRMKit.xcframework; path = Carthage/Build/VRMKit.xcframework; sourceTree = "<group>"; };
+		06218E1B25CE50D800EEFA5E /* VRMSceneKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VRMSceneKit.xcframework; path = Carthage/Build/VRMSceneKit.xcframework; sourceTree = "<group>"; };
 		247DCEF8221083A700E4C87F /* VTuberKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VTuberKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		247DCEFB221083A700E4C87F /* VTuberKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VTuberKit.h; sourceTree = "<group>"; };
 		247DCEFC221083A700E4C87F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,8 +115,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247DCF4C22115D1200E4C87F /* VRMKit.framework in Frameworks */,
-				247DCF4D22115D1200E4C87F /* VRMSceneKit.framework in Frameworks */,
+				06218E1C25CE50D800EEFA5E /* VRMKit.xcframework in Frameworks */,
+				06218E1E25CE50D800EEFA5E /* VRMSceneKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,8 +134,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247DCF3F22115AAD00E4C87F /* VRMSceneKit.framework in Frameworks */,
-				247DCF4022115AAD00E4C87F /* VRMKit.framework in Frameworks */,
+				06218E2C25CE51B100EEFA5E /* VRMKit.xcframework in Frameworks */,
+				06218E2E25CE51B100EEFA5E /* VRMSceneKit.xcframework in Frameworks */,
 				247DCF4122115AC900E4C87F /* VTuberKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,6 +202,8 @@
 		247DCF3C22115AAD00E4C87F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06218E1A25CE50D800EEFA5E /* VRMKit.xcframework */,
+				06218E1B25CE50D800EEFA5E /* VRMSceneKit.xcframework */,
 				247DCF3E22115AAD00E4C87F /* VRMKit.framework */,
 				247DCF3D22115AAD00E4C87F /* VRMSceneKit.framework */,
 			);
@@ -218,6 +240,7 @@
 				247DCEF4221083A700E4C87F /* Sources */,
 				247DCEF5221083A700E4C87F /* Frameworks */,
 				247DCEF6221083A700E4C87F /* Resources */,
+				06218E2025CE50D800EEFA5E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,7 +277,6 @@
 				247DCF122210840300E4C87F /* Sources */,
 				247DCF132210840300E4C87F /* Frameworks */,
 				247DCF142210840300E4C87F /* Resources */,
-				247DCF3B22115A3B00E4C87F /* Run Script - Carthage */,
 				247DCF4522115AC900E4C87F /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -274,7 +296,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Tatsuya Tanaka";
 				TargetAttributes = {
 					247DCEF7221083A700E4C87F = {
@@ -338,29 +360,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		247DCF3B22115A3B00E4C87F /* Run Script - Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/VRMKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/VRMSceneKit.framework",
-			);
-			name = "Run Script - Carthage";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		247DCEF4221083A700E4C87F /* Sources */ = {
@@ -434,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -456,6 +456,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -489,6 +490,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -498,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -520,6 +523,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -546,6 +550,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -568,7 +573,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -576,9 +581,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.tattn.VTuberKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -599,7 +602,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,8 +610,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.tattn.VTuberKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -623,7 +624,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -631,7 +632,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.tattn.VTuberKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
@@ -647,7 +647,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -655,7 +655,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.tattn.VTuberKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
@@ -672,14 +671,13 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.tattn.VTuberExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -695,14 +693,13 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.tattn.VTuberExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

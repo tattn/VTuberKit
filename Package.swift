@@ -3,12 +3,12 @@ import PackageDescription
 
 let package = Package(
     name: "VTuberKit",
-    platforms: [.iOS(.v11)],
+    platforms: [.iOS(.v12)],
     products: [
         .library(name: "VTuberKit", targets: ["VTuberKit"])
     ],
     dependencies: [
-        .package(url: "git@github.com:tattn/VRMKit.git", from: "0.3.1")
+        .package(url: "git@github.com:tattn/VRMKit.git", from: "0.4.4")
     ],
     targets: [
         .target(
