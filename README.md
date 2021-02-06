@@ -16,7 +16,7 @@
     <img src="https://img.shields.io/cocoapods/p/VTuberKit.svg" alt="Platform" />
   </a>
   <a href="https://developer.apple.com/swift">
-    <img src="https://img.shields.io/badge/Swift-4-F16D39.svg" alt="Swift Version" />
+    <img src="https://img.shields.io/badge/Swift-5-F16D39.svg" alt="Swift Version" />
   </a>
   <a href="./LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-green.svg?style=flat-square" alt="license:MIT" />
@@ -25,7 +25,7 @@
 
 <br />
 
-<img src="https://github.com/tattn/VTuberKit/raw/master/docs/demo.gif" width="400px" alt="demo" />
+<img src="https://github.com/tattn/VTuberKit/raw/main/docs/demo.gif" width="400px" alt="demo" />
 
 ## Features
 
@@ -40,9 +40,9 @@ For "VRM", please refer to [this page](https://dwango.github.io/en/vrm/).
 
 # Requirements
 
-- Xcode 10.x
-- Swift 4.x
-- iOS 11.0+
+- Xcode 12.x
+- Swift 5.x
+- iOS 12.0+
 
 # Installation
 
@@ -88,7 +88,7 @@ avatarView.stopFaceTracking()
 ### More details
 - Facial morphing and bone animation
   - [tattn/VRMKit](https://github.com/tattn/VRMKit)
-- [Example](https://github.com/tattn/VTuberKit/blob/master/Example/ViewController.swift)
+- [Example](https://github.com/tattn/VTuberKit/blob/main/Example/ViewController.swift)
 
 
 # ToDo
