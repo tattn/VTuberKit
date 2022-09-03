@@ -25,6 +25,11 @@ public final class FaceTracking: NSObject {
     public func start() {
         guard isSupported else { return }
         let configuration = ARFaceTrackingConfiguration()
+        configuration.isLightEstimationEnabled = false
+        if #available(iOS 13.0, *) {
+            configuration.maximumNumberOfTrackedFaces = 1
+        }
+
         session.delegate = self
         session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
@@ -36,7 +41,8 @@ public final class FaceTracking: NSObject {
 
 extension FaceTracking: ARSessionDelegate {
     public func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
-        guard let faceAnchor = anchors.lazy.compactMap({ $0 as? ARFaceAnchor }).first else { return }
+        guard let faceAnchor = anchors.lazy.compactMap({ $0 as? ARFaceAnchor }).first,
+              let frame = session.currentFrame else { return }
 
         // TODO/FIXME:
 
@@ -60,8 +66,9 @@ extension FaceTracking: ARSessionDelegate {
             trackingData.mouth = mouthClosenessX8 < e ? 0 : mouthClosenessX8 > 1 - e ? 1 : mouthClosenessX8
         }
 
-        let transform = faceAnchor.transform
-        trackingData.neckQuaternion = simd_quaternion(transform)
+        let cameraQuaternion = simd_quaternion(frame.camera.transform) * .init(angle: .pi / 2, axis: .init(0, 0, 1))
+        let faceQuaternion = simd_quaternion(faceAnchor.transform)
+        trackingData.neckQuaternion = faceQuaternion * cameraQuaternion.inverse
 
         delegate?.faceTracking(self, didUpdate: trackingData)
     }
