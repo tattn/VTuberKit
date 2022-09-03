@@ -40,7 +40,7 @@ For "VRM", please refer to [this page](https://dwango.github.io/en/vrm/).
 
 # Requirements
 
-- Xcode 12.x
+- Xcode 13+
 - Swift 5.x
 - iOS 12.0+
 
