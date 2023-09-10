@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "VTuberKit",
-    platforms: [.iOS(.v12)],
+    platforms: [.iOS(.v15)],
     products: [
         .library(name: "VTuberKit", targets: ["VTuberKit"])
     ],
