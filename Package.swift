@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
@@ -8,13 +8,15 @@ let package = Package(
         .library(name: "VTuberKit", targets: ["VTuberKit"])
     ],
     dependencies: [
-        .package(url: "git@github.com:tattn/VRMKit.git", from: "0.4.4")
+        .package(url: "https://github.com/tattn/VRMKit", from: "0.5.0")
     ],
     targets: [
         .target(
             name: "VTuberKit",
-            dependencies: ["VRMKit", "VRMSceneKit"],
-            path: "Sources"
+            dependencies: [
+                .product(name: "VRMKit", package: "VRMKit"),
+                .product(name: "VRMSceneKit", package: "VRMKit"),
+            ]
         )
     ]
 )
