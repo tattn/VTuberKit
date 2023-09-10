@@ -13,7 +13,7 @@
 
 <br />
 
-<img src="https://github.com/tattn/VTuberKit/raw/main/docs/demo.gif" width="400px" alt="demo" />
+<img src="https://github.com/tattn/VTuberKit/raw/main/.github/demo.gif" width="400px" alt="demo" />
 
 ## Features
 
